@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import axios from 'axios'
 
+import AppBar from './AppBar'
 import PersonDetail from './PersonDetail'
 
 class Person extends Component {
@@ -23,6 +24,9 @@ class Person extends Component {
   render () {
     return (
       <div>
+        <AppBar
+          currentPage="Person"
+        />
         <PersonDetail
           person={this.state.userInfo}
         />

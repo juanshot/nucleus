@@ -21,7 +21,7 @@ const useStyles = makeStyles(theme => ({
   }
 }));
 
-export default function ButtonAppBar() {
+export default function ButtonAppBar(props) {
   const classes = useStyles();
 
   return (
@@ -31,7 +31,7 @@ export default function ButtonAppBar() {
           <IconButton edge="start" className={classes.menuButton} color="inherit" aria-label="menu">
           </IconButton>
           <Typography variant="h6" className={classes.title}>
-            Home
+           {props.currentPage}
           </Typography>
         </Toolbar>
       </AppBar>
