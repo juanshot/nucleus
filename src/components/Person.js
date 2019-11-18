@@ -9,7 +9,7 @@ class Person extends Component {
     userInfo: null
   }
   async componentDidMount () {
-    const userName = this.props.match.params.name || 'juanshot'
+    const userName = this.props.match.params.userName || 'juanshot'
     try {
       const { data } = await axios.get(`https://api.github.com/users/${userName}`);
       this.setState((state) => ({

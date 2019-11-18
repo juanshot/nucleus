@@ -15,7 +15,7 @@ function Home() {
         )}
       />
       <Route
-        path="/person/:name"
+        path="/person/:userName"
         component={Person}
       />
     </div>
