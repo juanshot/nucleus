@@ -3,7 +3,6 @@ import { Route } from 'react-router-dom';
 
 import UsersList from './components/UsersList';
 import Person from './components/Person';
-import './App.css';
 
 function Home() {
   return (
