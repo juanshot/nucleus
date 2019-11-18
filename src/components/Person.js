@@ -26,6 +26,7 @@ class Person extends Component {
       <div>
         <AppBar
           currentPage="Person"
+          backBtn={true}
         />
         <PersonDetail
           person={this.state.userInfo}

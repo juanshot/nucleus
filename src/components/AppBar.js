@@ -4,6 +4,7 @@ import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 import IconButton from '@material-ui/core/IconButton';
+import MenuIcon from '@material-ui/icons/ArrowBack';
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -28,8 +29,17 @@ export default function ButtonAppBar(props) {
     <div className={classes.root}>
       <AppBar className={classes.appBar} position="static">
         <Toolbar>
-          <IconButton edge="start" className={classes.menuButton} color="inherit" aria-label="menu">
-          </IconButton>
+          { props.backBtn && (
+            <IconButton
+              href="/"
+              edge="start"
+              className={classes.menuButton}
+              color="inherit"
+              aria-label="menu"
+              >
+                <MenuIcon />
+            </IconButton>
+          ) }
           <Typography variant="h6" className={classes.title}>
            {props.currentPage}
           </Typography>
