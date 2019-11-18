@@ -16,7 +16,7 @@ class Person extends Component {
         userInfo: data
       }))
     } catch (err) {
-
+      throw new Error(`There was an error`);
     }
   }
 
