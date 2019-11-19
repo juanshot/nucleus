@@ -1,23 +1,30 @@
 import React from 'react';
-import { Route } from 'react-router-dom';
+import { Route, Switch } from 'react-router-dom';
 
 import UsersList from './components/UsersList';
 import Person from './components/Person';
+import NotFound from './NotFound'
 
 function Home() {
   return (
     <div>
-      <Route
-        exact
-        path="/"
-        render={() => (
-          <UsersList />
-        )}
-      />
-      <Route
-        path="/person/:userName"
-        component={Person}
-      />
+      <Switch>
+        <Route
+          exact
+          path="/"
+          render={() => (
+            <UsersList />
+          )}
+        />
+        <Route
+          path="/person/:userName"
+          component={Person}
+        />
+        <Route
+          path="*"
+          component={NotFound}
+        />
+      </Switch>
     </div>
   );
 }

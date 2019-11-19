@@ -1,8 +1,8 @@
-import React, { Component } from 'react'
-import axios from 'axios'
+import React, { Component } from 'react';
+import axios from 'axios';
 
-import AppBar from './AppBar'
-import PersonDetail from './PersonDetail'
+import AppBar from './AppBar';
+import PersonDetail from './PersonDetail';
 
 class Person extends Component {
   state = {

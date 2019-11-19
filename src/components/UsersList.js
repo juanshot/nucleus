@@ -1,17 +1,17 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import Button from '@material-ui/core/Button';
 import AppBar from './AppBar';
+import { INITIAL_USERS as topFive } from './../utils/constants';
 
 class UsersList extends Component {
   state = {
-    topFive: [
-      'GrahamCampbell',
-      'fabpot',
-      'weierophinney',
-      'rkh',
-      'josh'
-    ]
+    topFive
   }
+  redirectToPerson = (userName) => {
+    console.log(JSON.stringify(this.props))
+  }
+
   render () {
     return (
       <React.Fragment>
@@ -22,16 +22,20 @@ class UsersList extends Component {
             <h2>Top 5 GitHub Users</h2>
             <p>Tab the user to see more information</p>
             {this.state.topFive.map((user, index) => (
-              <Button
+              <Link
+                to={`person/${user}`}
+                key={index}
+              >
+                <Button
                   variant="contained"
                   color="primary"
                   size="large"
                   style={{ margin: '5px', background: '#2196f3' }}
-                  key={index}
-                  href={`/person/${user}`}
-              >
-                  {user}
-              </Button>
+                  to={`person/${user}`}
+                >
+                    { user }
+                </Button>
+              </Link>
             ))}
           </div>
       </React.Fragment>
